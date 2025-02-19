@@ -1,0 +1,35 @@
+:root{
+    /* Accent */
+
+    --blue: #6f9de2;
+    --purple: #9871f3;
+    --gradient: linear-gradient(90deg, #4b7fcd 0%, #8a61ea 100%);
+    
+    /* Feedback */
+
+    --danger: #f05d6c;
+
+    /* Grayscale */
+
+    --gray-1: #dae4f2;
+    --gray-2: #c8d0da;
+    --gray-3: #95a1b1;
+    --gray-4: #6f7d90;
+    --gray-5: #2a313c;
+    --gray-6: #21252c;
+    --gray-7: #191d24;
+    --gray-8: #13161b;
+    --gray-9: #0f1216;
+
+    /* typography */
+
+    --heading-sm:  2rem/100% semibold 'Oxanium', arial, serif;
+    --heading-md:  2.4rem/100% semibold 'Oxanium', arial,serif;
+    --heading-lg:  4rem/100% semibold 'Oxanium', arial, serif;
+
+    --body-xs: 1.2rem/160% semibold 'Montserrat', monospace, serif;
+    --body-sm: 1.4rem/160% regular 'Montserrat', monospace, serif;
+    --body-md: 1.6rem/160% regular 'Montserrat', monospace, serif;
+    --button: 1.6rem/160% semibold 'Montserrat', monospace, serif;
+}
+
