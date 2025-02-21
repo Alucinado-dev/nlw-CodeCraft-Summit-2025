@@ -23,13 +23,19 @@
 
     /* typography */
 
-    --heading-sm:  2rem/100% semibold 'Oxanium', arial, serif;
-    --heading-md:  2.4rem/100% semibold 'Oxanium', arial,serif;
-    --heading-lg:  4rem/100% semibold 'Oxanium', arial, serif;
+    --heading-sm:  2rem/100% 'Oxanium', arial, serif;
+    --heading-md:  2.4rem/100%  'Oxanium', arial,serif;
+    --heading-lg:  4rem/100%  'Oxanium', arial, serif;
 
-    --body-xs: 1.2rem/160% semibold 'Montserrat', monospace, serif;
-    --body-sm: 1.4rem/160% regular 'Montserrat', monospace, serif;
-    --body-md: 1.6rem/160% regular 'Montserrat', monospace, serif;
-    --button: 1.6rem/160% semibold 'Montserrat', monospace, serif;
+    --body-xs: 1.2rem/160%  'Montserrat', monospace, serif;
+    --body-sm: 1.4rem/160%  'Montserrat', monospace, serif;
+    --body-md: 1.6rem/160%  'Montserrat', monospace, serif;
+    --button: 1.6rem/160% 'Montserrat', monospace, serif;
+
 }
 
+img{
+    width: 2rem;
+    height: 2rem;
+    color: inherit;
+}

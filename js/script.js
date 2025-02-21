@@ -28,11 +28,12 @@ const users= [
 const saveUser = (userData) => {
     const newUser ={
         ...userData,
-        ref: Math.round(Math.random()*10000 + 4),
+        ref: Math.round(Math.random()*1000 + 4),
         refBy: 1 /* não tenho habilidades o suficiente para manipular como um número dinâmico ainda, portanto todos os usuários vão ser referenciados pelo usuário 1 */
     }
 
     users.push(newUser);
+    console.log(users);
     return newUser;
 }
 
@@ -57,10 +58,19 @@ const getTotalSubscribers = (userData) =>{
 
 const showInvite = (userData) => {
     app.innerHTML = `
-                <div class="link-container">
-                <label for="link">Seu link foi gerado</label>
-                <input type="text" name="link" id="link" value="https://evento.com?${userData.ref}" disabled>
-                <button id="copy">Copiar</button>
+            <div class="link-container">
+                 <h3>Inscrição confirmada! <img src="src/assets/badge-check.svg" alt="bagde check icon"></h3>
+
+                <p>
+                Convide mais pessoas e concorra a prêmios! <br/>
+                Compartilhe o link e acompanhe as inscrições:
+                </p>
+
+                <div class="link-display">
+                    <label for="link"><img src="src/assets/link.svg" alt="Link icon"></label>
+                    <input type="text" name="link" id="link" value="https://evento.com?${userData.ref}" disabled>
+                    <button id="copy">Copiar <img src="src/assets/copy.svg" alt="copy icon"> </button>
+                </div>
             </div>
 
             <div class="count-subscriptions">
@@ -72,9 +82,10 @@ const showInvite = (userData) => {
 /* função que será chamada ao submeter o formulário */
 
 const formAction =  () => {
-    app.onsubmit = (event) => {
+    const form = document.getElementById("form");
+    form.onsubmit = (event) => {
         event.preventDefault();
-        const formData = new FormData(form);
+        const formData = new FormData(form)
         const userData = {
             email: formData.get('email'),
             phone: formData.get('phone')
@@ -92,20 +103,41 @@ const formAction =  () => {
     }
 }
 
+/* atualiza imagem */
+
+/* const updateImageLinks = () => {
+    document.querySelectorAll('img').forEach((img) => {
+      const src = img.getAttribute("src"); 
+      if (src && !src.startsWith("http")) {  
+        img.src = `https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/${src}`;
+      }
+    });
+}; */
 
 /* coloca o  fomulário ao iniciar a aplicação */
 
 const startApp = () => {
     const content = `
-                <form>
-                <input type="email" name="email" id="email" placeholder="E-mail">
+                <form id="form" >
+                    <div class="input-field" >
+                        <label for="email">
+                         <img src="src/assets/mail.svg" alt="Email icon">
+                        </label>
+                        <input type="email" name="email" id="email" placeholder="E-mail">
+                    </div>
 
-                <input type="tel" name="phone" id="phone" placeholder="Telefone">
+                    <div class="input-field">
+                        <label for="phone">
+                            <img src="src/assets/phone.svg" alt="Phone icon">
+                        </label>
+                        <input type="tel" name="phone" id="phone" placeholder="Telefone">
+                    </div>
 
-                <button>Confirmar</button>
+                <button>Confirmar <img src="src/assets/arrow-right.svg" alt="Arrow right"> </button>
                 </form>`;
 
     app.innerHTML = content;
+    app.setAttribute('class', 'page-start');
     formAction();
 };
 
