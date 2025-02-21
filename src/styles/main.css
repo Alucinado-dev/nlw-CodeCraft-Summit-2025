@@ -113,7 +113,7 @@ section{
 
 #subscription form .input-field{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: var(--gray-8);
     border: 1px solid var(--gray-6);
@@ -122,12 +122,12 @@ section{
 }
 
 #subscription form input{
-    background: red;
+    background: transparent;
     border: none;
     font: var(--body-md);
     color: var(--gray-4);
     outline: none;
-    width: 80%;
+    width: 100%;
 
     &::placeholder{
         font: var(--body-md);

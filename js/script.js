@@ -120,7 +120,7 @@ const startApp = () => {
     const content = `
                 <form id="form" >
                     <div class="input-field" >
-                        <label for="email">
+                        <label for="email"> 
                          <img src="src/assets/mail.svg" alt="Email icon">
                         </label>
                         <input type="email" name="email" id="email" placeholder="E-mail">
