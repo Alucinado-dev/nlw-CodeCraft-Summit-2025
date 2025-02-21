@@ -75,8 +75,8 @@ section{
 #about .title a{
     font: var(--body-xs);
     color: var(--purple);
-    text-align: center;
-
+    display: flex;
+    align-items: center;
 }
 
 #about .title a img{
@@ -146,4 +146,83 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Link Container ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#link-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 2.4rem;
+}
+
+#link-container h2{
+    font: var(--heading-sm);
+    color: var(--purple);
+    align-self: center;
+}
+
+#link-container p{
+    font: var(--body-sm);
+    color: var(--gray-3);
+}
+
+#link-container .link-display{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--gray-8);
+    border: 1px solid var(--gray-6);
+    padding: 1rem 1.6rem;
+    border-radius: 1rem;
+}
+
+#link-container .link-display input{
+    background: transparent;
+    border: none;
+    outline: none;
+    font: var(--body-md);
+    color: var(--gray-4);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+
+    &::placeholder{
+        font: var(--body-md);
+        color: var(--gray-1);
+    }
+}
+
+#link-container .link-display button{
+    background: transparent;
+    padding: 0.1rem 0.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Count Subscriptions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#count-subscriptions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 2.4rem;
+
+}
+
+
+#count-subscriptions h4{
+    font: var(--heading-md);
+    color: var(--gray-2);
+}
+
+#count-subscriptions p{
+    font: var(--body-sm);
+    color: var(--gray-3);
 }

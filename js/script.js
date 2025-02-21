@@ -58,8 +58,8 @@ const getTotalSubscribers = (userData) =>{
 
 const showInvite = (userData) => {
     app.innerHTML = `
-            <div class="link-container">
-                 <h3>Inscrição confirmada! <img src="src/assets/badge-check.svg" alt="bagde check icon"></h3>
+            <section id="link-container">
+                 <h2>Inscrição confirmada! <img src="src/assets/badge-check.svg" alt="bagde check icon"></h2>
 
                 <p>
                 Convide mais pessoas e concorra a prêmios! <br/>
@@ -69,14 +69,14 @@ const showInvite = (userData) => {
                 <div class="link-display">
                     <label for="link"><img src="src/assets/link.svg" alt="Link icon"></label>
                     <input type="text" name="link" id="link" value="https://evento.com?${userData.ref}" disabled>
-                    <button id="copy">Copiar <img src="src/assets/copy.svg" alt="copy icon"> </button>
+                    <button id="copy"><img src="src/assets/copy.svg" alt="copy icon"> </button>
                 </div>
-            </div>
+            </section>
 
-            <div class="count-subscriptions">
+            <section id="count-subscriptions">
                 <h4>${getTotalSubscribers(userData)}</h4>
                 <p>Inscrições feitas</p>
-            </div>`;
+            </section>`;
 }
 
 /* função que será chamada ao submeter o formulário */
@@ -105,36 +105,50 @@ const formAction =  () => {
 
 /* atualiza imagem */
 
-/* const updateImageLinks = () => {
-    document.querySelectorAll('img').forEach((img) => {
-      const src = img.getAttribute("src"); 
-      if (src && !src.startsWith("http")) {  
-        img.src = `https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/${src}`;
-      }
-    });
-}; */
+
 
 /* coloca o  fomulário ao iniciar a aplicação */
 
 const startApp = () => {
     const content = `
-                <form id="form" >
-                    <div class="input-field" >
-                        <label for="email"> 
-                         <img src="src/assets/mail.svg" alt="Email icon">
-                        </label>
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-                    </div>
+        <section id="about">
+            <div class="title">
+                <h2>Sobre o evento</h2>
+                <a href="http://" target="_blank" rel="noopener noreferrer"> <img src="src/assets/radio.svg" alt=""> ao vivo</a>
+            </div>
 
-                    <div class="input-field">
-                        <label for="phone">
-                            <img src="src/assets/phone.svg" alt="Phone icon">
-                        </label>
-                        <input type="tel" name="phone" id="phone" placeholder="Telefone">
-                    </div>
+            <p>
+                Um evento feito por e para pessoas desenvolvedoras apaixonadas por criar soluções inovadoras e compartilhar conhecimento. Vamos mergulhar nas tendências mais recentes em desenvolvimento de software, arquitetura de sistemas e tecnologias emergentes, com palestras, workshops e hackathons.
+                <br> <br> <br>
+                Dias 15 a 17 de março | Das 18h às 21h | Online & Gratuito 
+            </p>
 
-                <button>Confirmar <img src="src/assets/arrow-right.svg" alt="Arrow right"> </button>
-                </form>`;
+        </section>
+
+        <section id="subscription">
+
+            <h2>Inscrição</h2>
+
+            <form id="form" >
+                <div class="input-field" >
+                    <label for="email"> 
+                     <img src="src/assets/mail.svg" alt="Email icon">
+                    </label>
+                    <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="on">
+                </div>
+
+                <div class="input-field">
+                    <label for="phone">
+                        <img src="src/assets/phone.svg" alt="Phone icon">
+                    </label>
+                    <input type="tel" name="phone" id="phone" placeholder="Telefone" autocomplete="on">
+                </div>
+
+            <button>Confirmar <img src="src/assets/arrow-right.svg" alt="Arrow right"> </button>
+            </form>
+
+        </section>
+    `;
 
     app.innerHTML = content;
     app.setAttribute('class', 'page-start');
