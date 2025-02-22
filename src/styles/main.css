@@ -204,6 +204,9 @@ section{
     border: none;
 }
 
+#link-container #copied{
+    display: none;
+}
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Count Subscriptions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 #count-subscriptions{

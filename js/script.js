@@ -49,35 +49,60 @@ const getUserByEmail = (userData) => {
 
 const getTotalSubscribers = (userData) =>{
     const subs = users.filter((user) =>{
-        user.refBy === userData.ref;
+        return user.refBy === userData.ref;
     }) 
     return subs.length;
 }
+
+/* Cria a funcionalidade de copiar para a área de transferência para o botão "copy" */
+
+const setupCopyButton = () => {
+    const input = document.getElementById('link');
+    const copyButton = document.getElementById('copy');
+    const copied = document.getElementById('copied');
+
+    copyButton.addEventListener('click', () => {
+        input.select();
+        input.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(input.value)
+            .then(() => {
+                copied.style.display = 'block';
+                setTimeout(() => {
+                    copied.style.display = 'none';
+                }, 2000);
+            })
+            .catch((err) => {
+                console.error('Erro ao copiar o texto', err);
+            });
+    });
+};
 
 /* mostra o convite ao invés do formulário */
 
 const showInvite = (userData) => {
     app.innerHTML = `
-            <section id="link-container">
-                 <h2>Inscrição confirmada! <img src="src/assets/badge-check.svg" alt="bagde check icon"></h2>
-
-                <p>
+        <section id="link-container">
+            <h2>Inscrição confirmada! <img src="src/assets/badge-check.svg" alt="bagde check icon"></h2>
+            <p>
                 Convide mais pessoas e concorra a prêmios! <br/>
                 Compartilhe o link e acompanhe as inscrições:
-                </p>
+            </p>
+            <div class="link-display">
+                <label for="link"><img src="src/assets/link.svg" alt="Link icon"></label>
+                <input type="text" name="link" id="link" value="https://evento.com?ref=${userData.ref}" disabled>
+                <button id="copy"><img src="src/assets/copy.svg" alt="copy icon"> </button>
+            </div>
+            <p id="copied">Texto copiado </p>
+        </section>
+        <section id="count-subscriptions">
+            <h4>${getTotalSubscribers(userData)}</h4>
+            <p>Inscrições feitas</p>
+        </section>
+    `;
 
-                <div class="link-display">
-                    <label for="link"><img src="src/assets/link.svg" alt="Link icon"></label>
-                    <input type="text" name="link" id="link" value="https://evento.com?${userData.ref}" disabled>
-                    <button id="copy"><img src="src/assets/copy.svg" alt="copy icon"> </button>
-                </div>
-            </section>
-
-            <section id="count-subscriptions">
-                <h4>${getTotalSubscribers(userData)}</h4>
-                <p>Inscrições feitas</p>
-            </section>`;
-}
+    setupCopyButton();
+};
 
 /* função que será chamada ao submeter o formulário */
 
@@ -103,7 +128,7 @@ const formAction =  () => {
     }
 }
 
-/* atualiza imagem */
+
 
 
 
@@ -156,3 +181,7 @@ const startApp = () => {
 };
 
 startApp();
+
+
+
+
