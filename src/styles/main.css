@@ -146,6 +146,12 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &:hover, &:focus{
+        background: var(--blue);
+        color: var(--gray-5);
+        outline: none;
+    }
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Link Container ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -202,6 +208,11 @@ section{
     border-radius: 1rem;
     cursor: pointer;
     border: none;
+
+    &:hover, &:focus{
+        background: var(--gray-4);
+        outline: none;
+    }
 }
 
 #link-container #copied{
