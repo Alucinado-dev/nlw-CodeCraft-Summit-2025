@@ -1,0 +1,23 @@
+@media screen and (max-width: 768px) {
+    :root{
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    header h1{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 364px){
+    :root{
+        font-size: 37.5%;
+    }
+}
+
+@media screen and (max-width: 280px){
+    section{
+        width: 28rem;
+    }
+}

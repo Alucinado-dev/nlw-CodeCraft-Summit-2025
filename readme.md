@@ -14,6 +14,11 @@ Bem-vindo ao repositório do **NLW CodeCraft Summit 2025**! Este projeto é uma 
 
 O CodeCraft Summit 2025 é um evento fictício, mas foi feito durante uma **NLW Conect** promovida pela [RocketSeat](https://rocketseat.com.br), um evento real, online e gratuito para desenvolvedores apaixonados por criar soluções inovadoras e compartilhar conhecimento. Este projeto foi feito por mim durante a trilha full-stack instruída por [Mayk Brito](https://www.linkedin.com/in/maykbrito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app). Este projeto foi de grande importância para meu aprendizado, pois pude fazer elelmentos dinâmicos com javascript além de  formulário para inscrição de usuários, geração de links de convite  e contagem de inscritos. Além é claro de consolidar outros conhecimentos como HTML e CSS
 
+![captura de tela da página](/src/assets/images/codecraft2.png)
+
+
+![captura de tela da página após a inscrição ser feita](/src/assets/images/codecraft.png)
+
 ## Tecnologias Utilizadas
 
 - HTML5
