@@ -31,6 +31,8 @@ O CodeCraft Summit 2025 é um evento fictício, mas foi feito durante uma **NLW 
 
 ## Site do Projeto
 
+https://alucin4do.github.io/nlw-CodeCraft-Summit-2025/
+
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests. Ou entre em contato comigo:
