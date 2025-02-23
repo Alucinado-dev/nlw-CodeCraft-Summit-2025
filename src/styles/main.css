@@ -1,4 +1,5 @@
 body{
+    background-color: rgb(4, 24, 24);
     background: url(/src/assets/images/Background.png) no-repeat center/cover;
     padding: 4rem 8.4rem ;
     min-height: 100vh;
